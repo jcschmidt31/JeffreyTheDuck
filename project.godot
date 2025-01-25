@@ -10,16 +10,10 @@ config_version=5
 
 [application]
 
-config/name="Platformer 2D"
-config/description="This demo is a pixel art 2D platformer with graphics and sound.
-
-It shows you how to code characters and physics-based objects
-in a real game context. This is a relatively complete demo
-where the player can jump, walk on slopes, fire bullets,
-interact with enemies, and more. It contains one closed
-level, and the player is invincible, unlike the enemies."
+config/name="Jeffrey the Duck"
+config/description="This is a game about a duck named Jeffrey who is trying to make the world a better place."
 config/tags=PackedStringArray("2d", "demo", "official", "physics", "tilemap")
-run/main_scene="res://game_singleplayer.tscn"
+run/main_scene="res://startscreen.tscn"
 config/features=PackedStringArray("4.3")
 config/icon="res://icon.webp"
 
