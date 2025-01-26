@@ -86,3 +86,15 @@ func try_jump() -> void:
 		return
 	velocity.y = JUMP_VELOCITY
 	jump_sound.play()
+	
+var health = 100
+
+func _process(delta):
+	# Player movement and other logic
+	if health <= 0:
+		reset_player()
+
+func reset_player():
+	var start_position = get_node("/Game/Level/PlayerStart")
+	position = Vector2(-699, 263)
+	health = 100  # Reset health or other stat

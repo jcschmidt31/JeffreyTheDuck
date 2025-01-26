@@ -1,19 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://beypixgh51lae"]
+[gd_scene load_steps=6 format=3 uid="uid://beypixgh51lae"]
 
 [ext_resource type="Script" path="res://game.gd" id="2"]
 [ext_resource type="PackedScene" uid="uid://b87du0np5o3c" path="res://level/level.tscn" id="3"]
 [ext_resource type="PackedScene" uid="uid://4qey4pno5jm0" path="res://player/player.tscn" id="4"]
 [ext_resource type="PackedScene" uid="uid://bp0av58dffjok" path="res://gui/pause_menu_singleplayer.tscn" id="4_x6l06"]
-[ext_resource type="Script" path="res://level1end.gd" id="5_uj1aj"]
-[ext_resource type="Script" path="res://killscript.gd" id="6_x43tk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e4kdn"]
 size = Vector2(346, 1532)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ubt77"]
-size = Vector2(683, 149)
-
-[node name="Game" type="Node"]
+[node name="Game" type="Node" node_paths=PackedStringArray("player_start_position")]
 process_mode = 3
 script = ExtResource("2")
 player_start_position = NodePath("Level/PlayerStart")
@@ -24,7 +19,6 @@ player_start_position = NodePath("Level/PlayerStart")
 position = Vector2(-704, 277)
 
 [node name="PlayerStart" type="Node2D" parent="Level"]
-unique_name_in_owner = true
 position = Vector2(-699, 263)
 
 [node name="InterfaceLayer" type="CanvasLayer" parent="."]
@@ -33,18 +27,9 @@ layer = 100
 [node name="PauseMenu" parent="InterfaceLayer" instance=ExtResource("4_x6l06")]
 
 [node name="Area2D" type="Area2D" parent="."]
-script = ExtResource("5_uj1aj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(2952, 778)
+position = Vector2(1790, 682)
 shape = SubResource("RectangleShape2D_e4kdn")
 
-[node name="KillZone" type="Area2D" parent="."]
-script = ExtResource("6_x43tk")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
-position = Vector2(1313, 727)
-shape = SubResource("RectangleShape2D_ubt77")
-
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
-[connection signal="body_entered" from="KillZone" to="KillZone" method="_on_body_entered"]
