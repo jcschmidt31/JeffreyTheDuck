@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://b87du0np5o3c"]
+[gd_scene load_steps=10 format=3 uid="uid://b87du0np5o3c"]
 
 [ext_resource type="TileSet" uid="uid://ca1hft71e0fuk" path="res://level/tileset.tres" id="1"]
 [ext_resource type="PackedScene" uid="uid://6mtip3ruyn" path="res://enemy/enemy.tscn" id="2"]
 [ext_resource type="PackedScene" uid="uid://cky6e5nl0nyod" path="res://level/platforms/platform.tscn" id="3"]
+[ext_resource type="AudioStream" uid="uid://2g4l6sh0v74m" path="res://Nope Rope Slope.mp3" id="5_11ysq"]
 [ext_resource type="PackedScene" uid="uid://cw6nldo3rjyyq" path="res://level/background/parallax_background.tscn" id="7"]
 
 [sub_resource type="Animation" id="1"]
@@ -232,3 +233,8 @@ position = Vector2(3000, 546)
 [node name="Bushes" type="Node" parent="."]
 
 [node name="Rocks" type="Node" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_11ysq")
+autoplay = true
+parameters/looping = true
