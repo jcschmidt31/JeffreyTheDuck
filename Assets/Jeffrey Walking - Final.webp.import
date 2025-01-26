@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cj2absxg54f75"
-path="res://.godot/imported/coin.webp-1d50c095672512acb2df6e9dbf7e85c6.ctex"
+uid="uid://40a4ulrorlin"
+path="res://.godot/imported/Jeffrey Walking - Final.webp-d2d9aa5a7cdc7410903500890834ba1d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://level/coin.webp"
-dest_files=["res://.godot/imported/coin.webp-1d50c095672512acb2df6e9dbf7e85c6.ctex"]
+source_file="res://Assets/Jeffrey Walking - Final.webp"
+dest_files=["res://.godot/imported/Jeffrey Walking - Final.webp-d2d9aa5a7cdc7410903500890834ba1d.ctex"]
 
 [params]
 

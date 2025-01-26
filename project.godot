@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Jeffrey the Duck"
 config/description="This is a game about a duck named Jeffrey who is trying to make the world a better place."
-config/tags=PackedStringArray("2d", "demo", "official", "physics", "tilemap")
+config/tags=PackedStringArray("2d", "physics", "tilemap")
 run/main_scene="res://startscreen.tscn"
 config/features=PackedStringArray("4.3")
 config/icon="res://icon.webp"
