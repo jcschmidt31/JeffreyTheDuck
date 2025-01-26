@@ -1,9 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://b87du0np5o3c"]
+[gd_scene load_steps=9 format=3 uid="uid://b87du0np5o3c"]
 
 [ext_resource type="TileSet" uid="uid://ca1hft71e0fuk" path="res://level/tileset.tres" id="1"]
 [ext_resource type="PackedScene" uid="uid://6mtip3ruyn" path="res://enemy/enemy.tscn" id="2"]
 [ext_resource type="PackedScene" uid="uid://cky6e5nl0nyod" path="res://level/platforms/platform.tscn" id="3"]
-[ext_resource type="Texture2D" uid="uid://bxsmiv7k3fngt" path="res://level/platforms/moving_platform.webp" id="6"]
 [ext_resource type="PackedScene" uid="uid://cw6nldo3rjyyq" path="res://level/background/parallax_background.tscn" id="7"]
 
 [sub_resource type="Animation" id="1"]
@@ -90,25 +89,6 @@ libraries = {
 }
 autoplay = "move"
 
-[node name="PlatformStatic" type="StaticBody2D" parent="Platforms"]
-z_index = -1
-position = Vector2(611, 135)
-rotation = 0.355618
-collision_layer = 16
-collision_mask = 0
-
-[node name="Sprite2" type="Sprite2D" parent="Platforms/PlatformStatic"]
-position = Vector2(-88.692, 10.5003)
-rotation = -0.246293
-texture = ExtResource("6")
-
-[node name="Sprite2D" type="Sprite2D" parent="Platforms/PlatformStatic"]
-texture = ExtResource("6")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/PlatformStatic"]
-position = Vector2(-3.20203, -8.41145)
-polygon = PackedVector2Array(-170.838, 7.9798, -90.8381, -15.201, 95.0401, -20.233, 83.4959, 3.25599, -51.1185, 8.44958, -176.787, 34.856)
-
 [node name="Platform3" parent="Platforms" instance=ExtResource("3")]
 position = Vector2(1473, 395)
 
@@ -120,7 +100,7 @@ libraries = {
 autoplay = "move"
 
 [node name="Platform4" parent="Platforms" instance=ExtResource("3")]
-position = Vector2(2466, 468)
+position = Vector2(2503, 362)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Platform4"]
 callback_mode_process = 0
@@ -130,7 +110,7 @@ libraries = {
 autoplay = "move"
 
 [node name="Platform5" parent="Platforms" instance=ExtResource("3")]
-position = Vector2(2841, 464)
+position = Vector2(2959, 306)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Platform5"]
 callback_mode_process = 0
@@ -140,7 +120,7 @@ libraries = {
 autoplay = "move"
 
 [node name="Platform6" parent="Platforms" instance=ExtResource("3")]
-position = Vector2(2704, 462)
+position = Vector2(2798, 336)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Platform6"]
 callback_mode_process = 0
@@ -150,7 +130,7 @@ libraries = {
 autoplay = "move"
 
 [node name="Platform7" parent="Platforms" instance=ExtResource("3")]
-position = Vector2(2588, 465)
+position = Vector2(2645, 357)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Platform7"]
 callback_mode_process = 0
@@ -215,7 +195,7 @@ position = Vector2(346, 429)
 
 [node name="Enemy5" parent="Enemies" instance=ExtResource("2")]
 z_index = 2
-position = Vector2(1631, 450)
+position = Vector2(1680, 465)
 
 [node name="Enemy6" parent="Enemies" instance=ExtResource("2")]
 z_index = 2
@@ -235,7 +215,7 @@ position = Vector2(2536, 552)
 
 [node name="Enemy10" parent="Enemies" instance=ExtResource("2")]
 z_index = 2
-position = Vector2(1833, 499)
+position = Vector2(1873, 427)
 
 [node name="Enemy11" parent="Enemies" instance=ExtResource("2")]
 z_index = 2
