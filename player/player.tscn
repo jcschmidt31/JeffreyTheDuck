@@ -1,10 +1,25 @@
-[gd_scene load_steps=18 format=3 uid="uid://4qey4pno5jm0"]
+[gd_scene load_steps=19 format=3 uid="uid://4qey4pno5jm0"]
 
-[ext_resource type="Texture2D" uid="uid://gy5fyfg52qeh" path="res://Assets/Duck Full Sprite Sheet.webp" id="2_gvemm"]
+[ext_resource type="Texture2D" uid="uid://cnw03g4ke2wd3" path="res://player/FINAL FINAL FINAL LEAVE ME ALONE.webp" id="2_campj"]
 [ext_resource type="Script" path="res://player/player.gd" id="3"]
 [ext_resource type="AudioStream" uid="uid://sjod173axgwf" path="res://player/jump.wav" id="5"]
 [ext_resource type="AudioStream" uid="uid://b01brytl75mwa" path="res://player/shoot.wav" id="6"]
 [ext_resource type="Script" path="res://player/gun.gd" id="8"]
+
+[sub_resource type="Animation" id="Animation_mxvfj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="Animation" id="1"]
 resource_name = "crouch"
@@ -58,8 +73,9 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id="4"]
+length = 0.7
 loop_mode = 1
-step = 0.25
+step = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -70,7 +86,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [30, 31, 32, 33]
+"values": [0, 31, 1, 33]
 }
 
 [sub_resource type="Animation" id="5"]
@@ -121,7 +137,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id="8"]
-length = 0.6
+length = 0.333337
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -130,10 +146,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.06003, 0.12006, 0.18009, 0.24012, 0.30015, 0.36018, 0.42021, 0.48024, 0.54027),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+"values": [2, 3, 4, 5]
 }
 
 [sub_resource type="Animation" id="9"]
@@ -170,6 +186,7 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jnr5f"]
 _data = {
+"RESET": SubResource("Animation_mxvfj"),
 "crouch": SubResource("1"),
 "falling": SubResource("2"),
 "falling_weapon": SubResource("3"),
@@ -183,6 +200,8 @@ _data = {
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4thfw"]
+radius = 8.75
+height = 20.0
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(0.8, 0.8)
@@ -196,22 +215,23 @@ wait_time = 0.2
 one_shot = true
 
 [node name="PlatformDetector" type="RayCast2D" parent="."]
+position = Vector2(11.25, 0)
 target_position = Vector2(0, 6)
 collision_mask = 8
 collide_with_areas = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -14)
-texture = ExtResource("2_gvemm")
-hframes = 4
-vframes = 4
+position = Vector2(9.53674e-07, -3.55271e-15)
+scale = Vector2(1.175, 0.8375)
+texture = ExtResource("2_campj")
+hframes = 6
 
 [node name="Gun" type="Marker2D" parent="Sprite2D"]
 position = Vector2(14, 1)
 script = ExtResource("8")
 
 [node name="Shoot" type="AudioStreamPlayer2D" parent="Sprite2D/Gun"]
-position = Vector2(-30.6589, -6.13176)
+position = Vector2(-14, -1)
 stream = ExtResource("6")
 
 [node name="Cooldown" type="Timer" parent="Sprite2D/Gun"]
@@ -224,7 +244,7 @@ libraries = {
 }
 
 [node name="Camera" type="Camera2D" parent="."]
-position = Vector2(0, -28)
+position = Vector2(0, 1.25)
 offset = Vector2(0, 50)
 limit_left = -715
 limit_top = -250
@@ -232,10 +252,11 @@ limit_right = 4000
 limit_bottom = 690
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2.5, -15)
+position = Vector2(4.76837e-07, 7.10543e-15)
 shape = SubResource("CapsuleShape2D_4thfw")
 
 [node name="Jump" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(11.25, 0)
 stream = ExtResource("5")
 volume_db = -3.0
 

@@ -5,18 +5,20 @@
 [ext_resource type="PackedScene" uid="uid://4qey4pno5jm0" path="res://player/player.tscn" id="4"]
 [ext_resource type="PackedScene" uid="uid://bp0av58dffjok" path="res://gui/pause_menu_singleplayer.tscn" id="4_x6l06"]
 
-[node name="Game" type="Node"]
+[node name="Game" type="Node" node_paths=PackedStringArray("player_start_position")]
 process_mode = 3
 script = ExtResource("2")
+player_start_position = NodePath("Level/PlayerStart")
 
 [node name="Level" parent="." instance=ExtResource("3")]
 
 [node name="Player" parent="Level" instance=ExtResource("4")]
-position = Vector2(-701, 195)
+position = Vector2(-704, 277)
+
+[node name="PlayerStart" type="Node2D" parent="Level"]
+position = Vector2(-699, 263)
 
 [node name="InterfaceLayer" type="CanvasLayer" parent="."]
 layer = 100
 
 [node name="PauseMenu" parent="InterfaceLayer" instance=ExtResource("4_x6l06")]
-
-[connection signal="coin_collected" from="Level/Player" to="InterfaceLayer/PauseMenu" method="_on_coin_collected"]

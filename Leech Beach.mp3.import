@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://clrmwu763boln"
+path="res://.godot/imported/Leech Beach.mp3-f0d7395f99fbe055e586c23eb0d1828e.mp3str"
+
+[deps]
+
+source_file="res://Leech Beach.mp3"
+dest_files=["res://.godot/imported/Leech Beach.mp3-f0d7395f99fbe055e586c23eb0d1828e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

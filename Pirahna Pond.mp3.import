@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://lf2rmo1e2d8f"
+path="res://.godot/imported/Pirahna Pond.mp3-f4ada2d95261a19828e05ef1d3fcd20a.mp3str"
+
+[deps]
+
+source_file="res://Pirahna Pond.mp3"
+dest_files=["res://.godot/imported/Pirahna Pond.mp3-f4ada2d95261a19828e05ef1d3fcd20a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
